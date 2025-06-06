@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Feed {
+  id          String    @id @default(uuid()) // 고유 ID (UUID 사용)
+  feedId      String    @unique // RSS Feed URL에 사용될 고유 ID
+  originalUrl String // 원본 뉴스/블로그 URL
+  rssXml      String // 생성된 RSS Feed XML 내용
+  createdAt   DateTime  @default(now()) // 생성 시각
+  updatedAt   DateTime  @updatedAt // 마지막 업데이트 시각
+} 
