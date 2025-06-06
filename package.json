@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
-    "cheerio": "^1.0.0",
+    "cheerio": "^1.0.0-rc.12",
     "next": "15.3.3",
     "prisma": "^6.9.0",
     "react": "^19.0.0",
